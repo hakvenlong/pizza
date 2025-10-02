@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<!-- Head Start -->
+<head th:fragment="head">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Classic Italian Restaurant, Pizzeria">
+    <meta name="description" content="Pizzeria - Authentic Italian cuisine with fresh ingredients and a cozy atmosphere.">
+    <meta name="robots" content="index, follow">
+    <title>PIZZERIA - Classic Italian Restaurant</title>
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cinzel:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="icon" href="img/about.png">
+
+    <!-- Custom Styles -->
+    <style>
+        select, option {
+            color: black;
+        }
+        .about-section .row, .service-section .row, .menu-section .row {
+            gap: 30px;
+        }
+        .about-section .row > [class*="col-"],
+        .service-section .row > [class*="col-"],
+        .menu-section .row > [class*="col-"] {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        @media (max-width: 991.98px) {
+            .about-section .row, .service-section .row, .menu-section .row {
+                gap: 20px;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .about-section .row, .service-section .row, .menu-section .row {
+                gap: 15px;
+            }
+        }
+        @media (min-width: 992px) {
+            .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+            .dropdown-menu {
+                display: none;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+            .nav-item.dropdown:hover .nav-link.dropdown-toggle {
+                background: #ffc107;
+                color: black;
+                transition: all 0.3s;
+            }
+            .nav-item.dropdown:hover {
+                border-bottom: 2px solid #ffc107;
+                transition: border-bottom 0.3s;
+            }
+        }
+        .dropdown-item {
+            transition: all 0.3s;
+        }
+        .dropdown-item:hover {
+            background: #ffc107;
+            color: black;
+        }
+        .dropdown-menu {
+            background: black;
+            border: none;
+            border-radius: 0.25rem;
+            min-width: 150px;
+        }
+        .dropdown-item {
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+        }
+        .dropdown-item.active, .dropdown-item:active {
+            background: #ffc107;
+            color: black;
+        }
+    </style>
+</head>
+<!-- Head End -->
+
+<!-- Navbar Start -->
+<div class="container-fluid p-0 nav-bar" 
+     th:fragment="navbar"
+     th:with="home=${home}?:'', about=${about}?:'', service=${service}?:'', menu=${menu}?:'', reservation=${reservation}?:'', testimonial=${testimonial}?:'', contact=${contact}?:'', success=${success}?:''"
+     data-aos="fade-down" data-aos-duration="1000" style="background: rgb(0, 0, 0);">
+    <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a th:href="@{/home}" class="navbar-brand px-lg-4 m-0">
+            <h1 class="m-0 display-4 text-uppercase" style="color: white;">PIZZERIA</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: white;"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto p-4">
+                <a th:href="@{/home}" th:class="'nav-item nav-link ' + ${home}" style="color: white;">Home</a>
+                <a th:href="@{/about}" th:class="'nav-item nav-link ' + ${about}" style="color: white;">About</a>
+                <a th:href="@{/service}" th:class="'nav-item nav-link ' + ${service}" style="color: white;">Service</a>
+                <a th:href="@{/menu}" th:class="'nav-item nav-link ' + ${menu}" style="color: white;">Menu</a>
+                <div class="nav-item dropdown" style="position: relative;">
+                    <a href="#" th:class="'nav-link dropdown-toggle' + (${reservation != null || testimonial != null || contact != null || success != null} ? ' active' : '')" 
+                       style="color: white;" 
+                       data-toggle="dropdown" 
+                       aria-haspopup="true" 
+                       aria-expanded="false">Pages</a>
+                    <div class="dropdown-menu text-capitalize" style="position: absolute; background: black; margin-top: 0.5rem; border-radius: 0.25rem; min-width: 150px;">
+                        <a th:href="@{/reservation}" th:class="'dropdown-item ' + ${reservation}" 
+                           style="color: white; padding: 0.5rem 1rem; display: block; text-decoration: none;">Reservation</a>
+                        <a th:href="@{/testimonial}" th:class="'dropdown-item ' + ${testimonial}" 
+                           style="color: white; padding: 0.5rem 1rem; display: block; text-decoration: none;">Testimonial</a>
+                    </div>
+                </div>
+                <a th:href="@{/contact}" th:class="'nav-item nav-link ' + ${contact}" style="color: white;">Contact</a>
+            </div>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 position-relative overlay-bottom classic-header" 
+     th:fragment="Header" 
+     th:with="text=${text}" 
+     data-aos="fade-up" data-aos-duration="1000" style="background: rgb(0, 0, 0);">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+        <div class="header-divider" style="border-bottom: 2px solid white;"></div>
+        <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-uppercase" th:text="${text}" style="color: white;">Testimonial</h1>
+        <div class="d-inline-flex mb-lg-5">
+            <p class="m-0" style="color: white;"><a class="text-white" th:href="@{/home}" style="color: white;">Home</a></p>
+            <p class="m-0 px-2" style="color: white;">/</p>
+            <p class="m-0" th:text="${text}" style="color: white;">Testimonial</p>
+        </div>
+        <div class="header-divider" style="border-bottom: 2px solid white;"></div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Footer Start -->
+<div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top classic-footer" 
+     th:fragment="Footer" 
+     data-aos="fade-up" data-aos-duration="1000" style="background: rgb(0, 0, 0);">
+    <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+        <div class="col-lg-3 col-md-6 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <h4 class="text-uppercase mb-4" style="letter-spacing: 3px; color: white;">Get In Touch</h4>
+            <div class="footer-divider" style="border-bottom: 2px solid white;"></div>
+            <p style="color: white;"><i class="fa fa-map-marker-alt mr-2" style="color: #ffc107;"></i>123 Street, New York, USA</p>
+            <p style="color: white;"><i class="fa fa-phone-alt mr-2" style="color: #ffc107;"></i>+012 345 67890</p>
+            <p class="m-0" style="color: white;"><i class="fa fa-envelope mr-2" style="color: #ffc107;"></i>info@example.com</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <h4 class="text-uppercase mb-4" style="letter-spacing: 3px; color: white;">Follow Us</h4>
+            <div class="footer-divider" style="border-bottom: 2px solid white;"></div>
+            <p style="color: white;">Stay updated with our latest offers and events.</p>
+            <div class="d-flex justify-content-start">
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#" aria-label="Twitter"><i class="fab fa-twitter" style="color: white;"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#" aria-label="Facebook"><i class="fab fa-facebook-f" style="color: white;"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" style="color: white;"></i></a>
+                <a class="btn btn-lg btn-outline-light btn-lg-square" href="#" aria-label="Instagram"><i class="fab fa-instagram" style="color: white;"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+            <h4 class="text-uppercase mb-4" style="letter-spacing: 3px; color: white;">Open Hours</h4>
+            <div class="footer-divider" style="border-bottom: 2px solid white;"></div>
+            <div>
+                <h6 class="text-uppercase" style="color: white;">Monday - Friday</h6>
+                <p style="color: white;">8.00 AM - 8.00 PM</p>
+                <h6 class="text-uppercase" style="color: white;">Saturday - Sunday</h6>
+                <p style="color: white;">2.00 PM - 8.00 PM</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <h4 class="text-uppercase mb-4" style="letter-spacing: 3px; color: white;">Newsletter</h4>
+            <div class="footer-divider" style="border-bottom: 2px solid white;"></div>
+            <p style="color: white;">Subscribe for exclusive offers and updates.</p>
+            <div class="w-100">
+                <div class="input-group">
+                    <input type="email" class="form-control border-light" style="padding: 25px; font-family: 'Lora', serif; color: white; border: 2px solid #ffc107;" placeholder="Your Email" aria-label="Email for newsletter">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary font-weight-bold px-3" style="background: #ffc107; color: black; border: none; border-radius: 5px;">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5 classic-footer-bottom" style="border-top: 1px solid white;">
+        <p class="mb-2" style="color: white;">Copyright &copy; <a class="font-weight-bold text-gold" href="#" style="color: #ffc107;">Pizzeria</a>. All Rights Reserved.</p>
+        <p class="m-0" style="color: white;">Designed by <a class="font-weight-bold text-gold" href="https://htmlcodex.com" style="color: #ffc107;">HTML Codex</a></p>
+    </div>
+</div>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<div th:fragment="script" th:remove="tag">
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" style="background: #ffc107; color: black; border: none;" aria-label="Back to top"><i class="fa fa-angle-double-up" style="color: black;"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/lib/easing/easing.min.js}"></script>
+    <script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
+    <script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+    <script th:src="@{/lib/tempusdominus/js/moment.min.js}"></script>
+    <script th:src="@{/lib/tempusdominus/js/moment-timezone.min.js}"></script>
+    <script th:src="@{/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js}"></script>
+
+    <!-- Contact Javascript File -->
+    <script th:src="@{/mail/jqBootstrapValidation.min.js}"></script>
+    <script th:src="@{/mail/contact.js}"></script>
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script th:src="@{/js/main.js}"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+    <!-- Owl Carousel Initialization -->
+    <script>
+        $(document).ready(function(){
+            $(".testimonial-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                nav: false,
+                dots: true,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                    992: { items: 3 }
+                }
+            });
+        });
+    </script>
+</div>
+</html>

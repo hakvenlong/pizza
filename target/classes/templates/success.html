@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+
+<!-- Head Start -->
+<head th:replace="~{base::head}"></head>
+<!-- Head Start -->
+
+<body style="background: rgb(0, 0, 0); font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    <!-- Navbar Start -->
+    <div th:replace="~{base::navbar(success='active')}"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base::Header(text='Success')}"></div>
+    <!-- Page Header End -->
+
+    <!-- Success Start -->
+    <div class="container-fluid py-5" style="background: rgb(0, 0, 0);" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <h1 class="mb-4 text-center" style="color: white;">Booking Successful</h1>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped text-center align-middle shadow rounded-3" style="color: white; background: #222; border: 2px solid #ffc107;">
+                    <thead class="table-dark" style="background: #111; border-bottom: 2px solid #ffc107;">
+                        <tr>
+                            <th style="color: white;">Id</th>
+                            <th style="color: white;">Name</th>
+                            <th style="color: white;">Phone Number</th>
+                            <th style="color: white;">Email</th>
+                            <th style="color: white;">Date</th>
+                            <th style="color: white;">Time</th>
+                            <th style="color: white;">Person(s)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td th:text="${booked.id}" style="color: white;">id</td>
+                            <td th:text="${booked.name}" style="color: white;">Name</td>
+                            <td th:text="${booked.phoneNumber}" style="color: white;">Phone</td>
+                            <td th:text="${booked.email}" style="color: white;">Email</td>
+                            <td th:text="${booked.date}" style="color: white;">Date</td>
+                            <td th:text="${booked.time}" style="color: white;">Time</td>
+                            <td th:text="${booked.person}" style="color: white;">Person</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Success End -->
+
+    <!-- Footer Start -->
+    <div th:replace="~{base::Footer}"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <div th:replace="~{base::script}"></div>
+</body>
+</html>

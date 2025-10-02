@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+
+    <!-- Head Start -->
+    <head th:replace="~{base::head}">
+        <!-- Add AOS CSS in the head fragment -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+    <!-- Head End -->
+
+<body style="background: rgb(0, 0, 0); font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    <!-- Navbar Start -->
+    <div th:replace="~{base :: navbar(service='active')}"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base :: Header(text='Services')}"></div>
+    <!-- Page Header End -->
+
+    <!-- Service Start -->
+    <div class="container-fluid pt-5" data-aos="fade-up" data-aos-duration="1000" style="background: rgb(0, 0, 0);">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+                <h4 class="text-uppercase" style="letter-spacing: 5px; color: white;">Our Services</h4>
+                <h1 class="display-4" style="color: white;">Fresh & Organic Beans</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/service-1.jpg" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4 style="color: white;"><i class="fa fa-truck service-icon"></i>Fastest Door Delivery</h4>
+                            <p class="m-0" style="color: white;">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/service-2.jpg" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4 style="color: white;"><i class="fa fa-coffee service-icon"></i>Fresh Coffee Beans</h4>
+                            <p class="m-0" style="color: white;">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/service-3.jpg" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4 style="color: white;"><i class="fa fa-award service-icon"></i>Best Quality Coffee</h4>
+                            <p class="m-0" style="color: white;">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/service-4.jpg" alt="">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4 style="color: white;"><i class="fa fa-table service-icon"></i>Online Table Booking</h4>
+                            <p class="m-0" style="color: white;">Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima erat tempor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Footer Start -->
+    <div th:replace="~{base::Footer}"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <div th:replace="~{base::script}">
+        <!-- Add AOS JavaScript and initialization in the script fragment -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000, // Default duration for all animations
+                once: true // Animations occur only once when scrolling
+            });
+        </script>
+    </div>
+</body>
+</html>

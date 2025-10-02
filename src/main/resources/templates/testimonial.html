@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<!-- Head Start -->
+<head th:replace="~{base::head}"></head>
+<!-- Head End -->
+
+<body style="background: rgb(0, 0, 0); font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    <!-- Navbar Start -->
+    <div th:replace="~{base :: navbar(testimonial='active')}"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base :: Header(text='Testimonial')}"></div>
+    <!-- Page Header End -->
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5" style="background: rgb(0, 0, 0); color: white;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+                <h4 class="text-uppercase" style="letter-spacing: 5px; color: #ffc107;">Testimonial</h4>
+                <h1 class="display-4" style="color: white;">Our Clients Say</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="testimonial-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-1.jpg" alt="Portrait of John Doe" loading="lazy">
+                        <div class="ml-3">
+                            <h4 style="color: white;">John Doe</h4>
+                            <i style="color: #cccccc;">Food Critic</i>
+                        </div>
+                    </div>
+                    <p class="m-0" style="color: #cccccc;">The Margherita pizza was divine, with fresh ingredients and a perfect crust!</p>
+                </div>
+                <div class="testimonial-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="Portrait of Jane Smith" loading="lazy">
+                        <div class="ml-3">
+                            <h4 style="color: white;">Jane Smith</h4>
+                            <i style="color: #cccccc;">Local Customer</i>
+                        </div>
+                    </div>
+                    <p class="m-0" style="color: #cccccc;">Amazing service and the best tiramisu I’ve ever had!</p>
+                </div>
+                <div class="testimonial-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-3.jpg" alt="Portrait of Carlos Rivera" loading="lazy">
+                        <div class="ml-3">
+                            <h4 style="color: white;">Carlos Rivera</h4>
+                            <i style="color: #cccccc;">Chef</i>
+                        </div>
+                    </div>
+                    <p class="m-0" style="color: #cccccc;">Authentic Italian flavors that transport you to Italy!</p>
+                </div>
+                <div class="testimonial-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-4.jpg" alt="Portrait of Emily Chen" loading="lazy">
+                        <div class="ml-3">
+                            <h4 style="color: white;">Emily Chen</h4>
+                            <i style="color: #cccccc;">Blogger</i>
+                        </div>
+                    </div>
+                    <p class="m-0" style="color: #cccccc;">A cozy atmosphere and delicious pasta dishes!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Footer Start -->
+    <div th:replace="~{base::Footer}"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <div th:replace="~{base::script}"></div>
+</body>
+</html>

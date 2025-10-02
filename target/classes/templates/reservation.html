@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+
+    <!-- Head Start -->
+    <head th:replace="~{base::head}"></head>
+    <!-- Head End -->
+
+<body style="background: rgb(0, 0, 0); font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    <!-- Navbar Start -->
+    <div th:replace="~{base :: navbar(reservation='active')}"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base :: Header(text='Reservation')}"></div>
+    <!-- Page Header End -->
+
+    <!-- Reservation Start -->
+    <div class="container-fluid py-5" th:fragment="reservation" style="background: #1a1a1a; color: white;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="reservation position-relative overlay-top overlay-bottom" style="background: url('img/reservation-bg.jpg') center center/cover no-repeat; border-radius: 10px;" data-aos="fade-up" data-aos-duration="1000">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 my-5 my-lg-0" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="p-5" style="background: rgba(0, 0, 0, 0.7); border-radius: 10px;">
+                            <div class="mb-4">
+                                <h1 style="color: #ffc107; font-size: 3.5rem; font-weight: bold;">30% OFF</h1>
+                                <h1 style="color: white; font-size: 2rem;">For Online Reservation</h1>
+                            </div>
+                            <p style="color: #cccccc; line-height: 1.8;">Lorem justo clita erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea</p>
+                            <ul class="list-inline text-white m-0">
+                                <li class="py-2" style="color: #cccccc;"><i class="fa fa-check" style="color: #ffc107; margin-right: 10px;"></i>Lorem ipsum dolor sit amet</li>
+                                <li class="py-2" style="color: #cccccc;"><i class="fa fa-check" style="color: #ffc107; margin-right: 10px;"></i>Lorem ipsum dolor sit amet</li>
+                                <li class="py-2" style="color: #cccccc;"><i class="fa fa-check" style="color: #ffc107; margin-right: 10px;"></i>Lorem ipsum dolor sit amet</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="text-center p-5" style="background: #222222; border-radius: 10px;">
+                            <h1 style="color: white; font-size: 2rem; margin-bottom: 20px; margin-top: 20px;">Book Your Table</h1>
+                            <form th:object="${booked}" th:action="@{/success}" th:method="post" class="mb-5">
+                                <div class="form-group">
+                                    <input th:field="*{name}" type="text" class="form-control bg-transparent border-primary p-4" placeholder="Name" required="required" style="background: #333333; color: white; border: 2px solid #ffc107; border-radius: 5px; height: 50px;" />
+                                </div>
+                                <div class="form-group">
+                                    <input th:field="*{phoneNumber}" type="text" class="form-control bg-transparent border-primary p-4" placeholder="Phone number" required="required" style="background: #333333; color: white; border: 2px solid #ffc107; border-radius: 5px; height: 50px;" />
+                                </div>
+                                <div class="form-group">
+                                    <input th:field="*{email}" type="email" class="form-control bg-transparent border-primary p-4" placeholder="Email" required="required" style="background: #333333; color: white; border: 2px solid #ffc107; border-radius: 5px; height: 50px;" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="date" id="date" data-target-input="nearest">
+                                        <input th:field="*{date}" type="text" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Date" data-target="#date" data-toggle="datetimepicker" style="background: #333333; color: white; border: 2px solid #ffc107; border-radius: 5px; height: 50px;" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="time" id="time" data-target-input="nearest">
+                                        <input th:field="*{time}" type="text" class="form-control bg-transparent border-primary p-4 datetimepicker-input" placeholder="Time" data-target="#time" data-toggle="datetimepicker" style="background: #333333; color: white; border: 2px solid #ffc107; border-radius: 5px; height: 50px;" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <select th:field="*{person}" class="custom-select bg-transparent border-primary px-4" style="background: #333333; color: white; border: 2px solid #ffc107; border-radius: 5px; height: 50px;">
+								  <option selected value="0">Person</option>
+								  <option value="1">Person 1</option>
+								  <option value="2">Person 2</option>
+								  <option value="3">Person 3</option>
+								  <option value="4">Person 4</option>
+								  <option value="5">Person 5</option>
+								  <option value="10">Person 10</option>
+								  <option value="15">Person 15+</option>
+
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary btn-block font-weight-bold py-3" type="submit" style="background: #ffc107; color: black; border: none; border-radius: 5px; transition: background 0.3s;">Book Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Reservation End -->
+
+    <!-- Footer Start -->
+    <div th:replace="~{base::Footer}"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <div th:replace="~{base::script}"></div>
+</body>
+</html>

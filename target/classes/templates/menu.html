@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+
+    <!-- Head Start -->
+    <head th:replace="~{base::head}">
+        <!-- Add AOS CSS in the head fragment -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+    <!-- Head End -->
+
+<body style="background: rgb(0, 0, 0); font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    <!-- Navbar Start -->
+    <div th:replace="~{base :: navbar(menu='active')}"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base :: Header(text='Menu')}"></div>
+    <!-- Page Header End -->
+
+    <!-- Menu Start -->
+    <div class="container-fluid pt-5" data-aos="fade-up" data-aos-duration="1000" style="background: rgb(0, 0, 0);">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
+                <h4 class="text-uppercase" style="letter-spacing: 5px; color: white;">Menu & Pricing</h4>
+                <h1 class="display-4" style="color: white;">Competitive Pricing</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="mb-5" style="color: white;">Hot Coffee</h1>
+                    <div class="row align-items-center mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="">
+                            <h5 class="menu-price" style="color: white;">$5</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4 style="color: white;">Black Coffee</h4>
+                            <p class="m-0" style="color: white;">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="">
+                            <h5 class="menu-price" style="color: white;">$7</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4 style="color: white;">Chocolete Coffee</h4>
+                            <p class="m-0" style="color: white;">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="">
+                            <h5 class="menu-price" style="color: white;">$9</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4 style="color: white;">Coffee With Milk</h4>
+                            <p class="m-0" style="color: white;">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="mb-5" style="color: white;">Cold Coffee</h1>
+                    <div class="row align-items-center mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="">
+                            <h5 class="menu-price" style="color: white;">$5</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4 style="color: white;">Black Coffee</h4>
+                            <p class="m-0" style="color: white;">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="">
+                            <h5 class="menu-price" style="color: white;">$7</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4 style="color: white;">Chocolete Coffee</h4>
+                            <p class="m-0" style="color: white;">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="">
+                            <h5 class="menu-price" style="color: white;">$9</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4 style="color: white;">Coffee With Milk</h4>
+                            <p class="m-0" style="color: white;">Sit lorem ipsum et diam elitr est dolor sed duo guberg sea et et lorem dolor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu End -->
+
+    <!-- Footer Start -->
+    <div th:replace="~{base::Footer}"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <div th:replace="~{base::script}">
+        <!-- Add AOS JavaScript and initialization in the script fragment -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000, // Default duration for all animations
+                once: true // Animations occur only once when scrolling
+            });
+        </script>
+    </div>
+</body>
+</html>

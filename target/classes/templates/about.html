@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org">
+
+    <!-- Head Start -->
+    <head th:replace="~{base::head}"></head>
+    <!-- Head End -->
+
+<body style="background: rgb(0, 0, 0); font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    <!-- Navbar Start -->
+    <div th:replace="~{base :: navbar(about='active')}"></div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base :: Header(text='About Us')}"></div>
+    <!-- Page Header End -->
+
+    <!-- About Start -->
+    <div class="container-fluid py-5" style="background: rgb(0, 0, 0); color: white;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 40px;" data-aos="fade-up" data-aos-duration="1000">
+                <h4 style="color: #ffc107; text-transform: uppercase; letter-spacing: 5px; font-size: 1.2rem;">About Us</h4>
+                <h1 style="color: white; font-size: 2.5rem; font-weight: bold;">Serving Since 1950</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 py-0 py-lg-5" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+                    <h1 style="color: white; font-size: 2rem; margin-bottom: 20px;">Our Story</h1>
+                    <h5 style="color: #ffc107; margin-bottom: 20px;">Eos kasd eos dolor vero vero, lorem stet diam rebum. Ipsum amet sed vero dolor sea</h5>
+                    <p style="color: #cccccc; line-height: 1.8;">Takimata sed vero vero no sit sed, justo clita duo no duo amet et, nonumy kasd sed dolor eos diam lorem eirmod. Amet sit amet amet no. Est nonumy sed labore eirmod sit magna. Erat at est justo sit ut. Labor diam sed ipsum et eirmod</p>
+                    <a href="" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2" style="background: #ffc107; color: black; border: none; border-radius: 5px; transition: background 0.3s;">Learn More</a>
+                </div>
+                <div class="col-lg-6 py-5 py-lg-0" style="min-height: 500px;" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="img/about.png" style="object-fit: cover; border-radius: 10px;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Footer Start -->
+    <div th:replace="~{base::Footer}"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <div th:replace="~{base::script}"></div>
+</body>
+</html>
